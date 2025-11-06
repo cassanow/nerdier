@@ -23,6 +23,11 @@ namespace nerdier.Repository
             return await _context.Player.Where(p => p.Id == id).FirstOrDefaultAsync();  
         }
 
+        public async Task<bool> PlayerExists(string name)
+        {
+           return await _context.Player.AnyAsync(p => p.Nome.ToLower().Trim() == name.ToLower().Trim());
+        }
+
         public async Task<Player> AddPlayer(Player player)
         {
             _context.Player.Add(player);
