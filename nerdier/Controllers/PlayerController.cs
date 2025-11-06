@@ -51,7 +51,7 @@ namespace nerdier.Controllers
             var response = new Player
             {
                 Nome = dto.Nome,
-                Pontos = null,
+                Pontos = 0,
             };
 
             await _playerRepository.AddPlayer(response);
@@ -70,7 +70,6 @@ namespace nerdier.Controllers
             var response = new Player
             {
                 Nome = dto.Nome,
-                Pontos = null,
             };
 
             var existe = await _playerRepository.PlayerExists(dto.Nome);
