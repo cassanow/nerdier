@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using nerdier.Model;
 
 namespace nerdier.Data
 {
@@ -8,7 +9,7 @@ namespace nerdier.Data
         {
         }
 
-
+        public DbSet<Player> Player { get; set; }
     }
 }
 
