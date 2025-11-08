@@ -67,16 +67,14 @@ namespace nerdier.Controllers
 
             if (player == null) return NotFound("Player not found.");
 
-            var response = new Player
-            {
-                Nome = dto.Nome,
-            };
+
+            player.Nome = dto.Nome; 
 
             var existe = await _playerRepository.PlayerExists(dto.Nome);
             if (existe) return BadRequest("A Player with that name already exists");
 
 
-            await _playerRepository.UpdatePlayer(response);
+            await _playerRepository.UpdatePlayer(player);
 
             return Ok(dto);
         }
