@@ -59,7 +59,7 @@ namespace nerdier.Controllers
             return Ok(response);
         }
 
-        [HttpPost("UpdatePlayer/{id}")]
+        [HttpPut("UpdatePlayer/{id}")]
         public async Task<IActionResult> UpdatePlayer(int id, AddPlayerDTO dto)
         {
 
